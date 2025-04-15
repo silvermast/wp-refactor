@@ -1,10 +1,10 @@
 # wp-refactor
-This script takes a mysqldump .sql file and performs a recursive find & replace on a hostname or other string. It even supports replacing text within PHP-serialized fields.
+This script performs a recursive find & replace on a hostname or other string within a wordpress database. It even de-serializes, recursively searches, and re-serializes any field which has been stored with PHP's `serialize`. 
 
 Usage:
 ```
-php wp-refactor.php <sqlFile> <search> <replace>
+php wp-refactor.php wp-config.php <search> <replace>
 
 Example:
-php wp-refactor.php ./database.sql test.silvermast.io www.silvermast.io
+php wp-refactor.php ./wp-config.php test.silvermast.io www.silvermast.io
 ```
